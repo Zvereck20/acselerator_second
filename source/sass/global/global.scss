@@ -1,0 +1,61 @@
+.page {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.body {
+  min-height: 100%;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+  margin: 0;
+  padding: 0;
+  background-color: $main-color;
+  color: $text-color;
+  overflow-x: hidden;
+  position: relative;
+}
+
+footer {
+  grid-row: 3/4;
+}
+
+.body-lock {
+  overflow-y: scroll;
+  position: fixed;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.button {
+  margin: 0 auto;
+  text-decoration: none;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 326px;
+  height: 51px;
+  font-weight: 700;
+  font-size: 1px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: $main-color;
+  background-color: $excretion-color;
+  border: none;
+  cursor: pointer;
+}
