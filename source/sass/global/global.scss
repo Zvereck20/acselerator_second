@@ -24,6 +24,7 @@ footer {
 }
 
 .body-lock {
+  width: 100%;
   overflow-y: scroll;
   position: fixed;
 }
@@ -50,12 +51,98 @@ footer {
   align-items: center;
   width: 326px;
   height: 51px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
-  font-size: 1px;
-  line-height: 19px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: $main-color;
   background-color: $excretion-color;
   border: none;
   cursor: pointer;
+
+  &:hover {
+    border-radius: 10px;
+    transform: scale(1.1, 1.1);
+    transition-duration: 0.3s;
+  }
+}
+
+.toggle {
+  display: none;
+}
+
+.toggle--close {
+  @media (max-width: $mobile-width) {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+
+    outline: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 17px;
+      width: 16px;
+      height: 1px;
+      background-color: $toogle-color;
+    }
+
+    &::before {
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.toggle--open {
+  @media (max-width: $mobile-width) {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+
+    outline: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 17px;
+      width: 16px;
+      height: 1px;
+      background-color: $toogle-color;
+      box-shadow: none;
+    }
+  }
+}
+
+.accordion ul {
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
+}
+
+.accordion--close ul {
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 }

@@ -29,3 +29,13 @@
     url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"),
     url("../fonts/RobotoCondensed-Bold.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url("../fonts/Roboto-Medium.woff2") format("woff2"),
+    url("../fonts/Roboto-Medium.woff") format("woff");
+}

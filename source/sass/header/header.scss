@@ -1,0 +1,132 @@
+.header {
+  background-color: $block-background;
+  background-image: url("../img/header_bc.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/header_bc2x.png");
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 705px;
+    height: 515px;
+    background-image: url("../img/fees.png");
+    background-repeat: no-repeat;
+    bottom: 105px;
+    right: 175px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/fees2x.png");
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 640px;
+    height: 650px;
+    background-image: url("../img/triangle.png");
+    background-repeat: no-repeat;
+    bottom: 110px;
+    right: 250px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/triangle2x.png");
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    background-position: -285px 100px;
+
+    &::before {
+      width: 260px;
+      height: 340px;
+      background-size: cover;
+      top: 112px;
+      right: 0;
+    }
+
+    &::after {
+      width: 330px;
+      height: 505px;
+      background-size: cover;
+      top: -40px;
+      right: 0;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    &::before {
+      width: 296px;
+      height: 220px;
+      top: 91px;
+      right: 0;
+    }
+
+    &::after {
+      width: 168px;
+      height: 485px;
+      top: -47px;
+      right: 0;
+    }
+  }
+}
+
+.header__wrap {
+  max-width: 1420px;
+  padding: 0 25px;
+  margin: 0 auto;
+
+  @media (max-width: $mobile-width) {
+    padding: 0 15px;
+  }
+}
+
+.header__logo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  text-decoration: none;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: $logo-color;
+  cursor: pointer;
+
+  div {
+    padding-left: 19px;
+    padding-top: 5px;
+    display: flex;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+  }
+
+  strong {
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-size: 25px;
+    line-height: 29px;
+    color: $main-color;
+  }
+
+  @media (max-width: $tablet-width) {
+    div {
+      padding-left: 16px;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    img {
+      width: 38px;
+      height: 38px;
+    }
+
+    div {
+      display: none;
+    }
+  }
+}

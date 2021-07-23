@@ -1,0 +1,48 @@
+.contacts {
+  position: relative;
+
+  h2 {
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $block-background;
+  }
+
+  ul {
+    padding-left: 0;
+    padding-top: 8px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 25px;
+    color: $block-background;
+
+    &:hover {
+      color: $excretion-color;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-right: 11px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    padding: 18px 15px;
+    border-bottom: 1px solid $footer-border;
+
+    ul {
+      width: 95%;
+      padding-top: 15px;
+    }
+  }
+}

@@ -9,6 +9,7 @@
   <link rel="preload" href="fonts/PTMono-Regular.woff2" as="font">
   <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font">
   <link rel="preload" href="fonts/RobotoCondensed-Bold.woff2" as="font">
+  <link rel="preload" href="fonts/Roboto-Medium.woff2" as="font">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -17,24 +18,26 @@
   <header class="header">
     <div class="header__wrap">
       <nav class="navigation">
-        <a class="header_logo">
-          <img src="./img/logo.svg" alt="Логотип компании">
-          <strong>Smart Device</strong>
-          умные технологии
+        <a class="header__logo">
+          <img src="./img/logo.svg" alt="Логотип компании" width="52" height="52">
+          <div>
+            <strong>Smart Device</strong>
+            умные технологии
+          </div>
         </a>
         <ul class="navigation__list">
           <li class="navigation__item">
-            <a href="mailto:info@sd.ru" class="navigation__link">
-              <svg width="35" height="27" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="mailto:info@sd.ru" class="navigation__link navigation__link--mail">
+              <svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="img/sprite.svg#mail_icon"></use>
               </svg>
               <span>info@sd.ru</span>
             </a>
           </li>
           <li class="navigation__item">
-            <a href="tel:+74950005252" class="navigation__link">
-              <svg width="35" height="27" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/sprite.svg#mail_icon"></use>
+            <a href="tel:+74950005252" class="navigation__link navigation__link--phone">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#phone_icon"></use>
               </svg>
               <span>+7 (495) 000 52 52</span>
             </a>
@@ -46,10 +49,11 @@
       <section class="slogan">
         <h1 class="slogan__heading">печатные платы</h1>
         <p class="slogan__text">производство и монтаж, поставка комплектующих, блоков и модулей</p>
-        <a href="" class="slogan__button button">
+        <a href="#feedback" class="slogan__button button">
           <span>получить бесплатную консультацию</span>
           <span>бесплатная консультация</span>
         </a>
+        <a href="#advantages" class="slogan__scroll">Скролл вниз</a>
       </section>
 
     </div>
@@ -57,13 +61,13 @@
 
   <main class="main">
 
-    <section class="advantages">
+    <section class="advantages" id="advantages">
       <div class="wrap">
         <h2 class="visually-hidden">Наши преимущества</h2>
         <ul class="advantages__list">
           <li class="advantages__item">
-            <svg width="35" height="27" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/sprite.svg#mail_icon"></use>
+            <svg width="29" height="35" viewBox="0 0 29 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#timing_icon"></use>
             </svg>
             <h3>Оперативные сроки </h3>
             <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость,
@@ -71,8 +75,8 @@
             </p>
           </li>
           <li class="advantages__item">
-            <svg width="35" height="27" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/sprite.svg#mail_icon"></use>
+            <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#suppliers_icon"></use>
             </svg>
             <h3>Крупные поставщики</h3>
             <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM,
@@ -81,15 +85,15 @@
             </p>
           </li>
           <li class="advantages__item">
-            <svg width="35" height="27" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/sprite.svg#mail_icon"></use>
+            <svg width="36" height="31" viewBox="0 0 36 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#confidentiality_icon"></use>
             </svg>
             <h3>Полная конфиденциальность</h3>
             <p>По желанию клиента мы обеспечиваем полную конфеденциальность.</p>
           </li>
           <li class="advantages__item">
-            <svg width="35" height="27" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/sprite.svg#mail_icon"></use>
+            <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#cost_icon"></use>
             </svg>
             <h3>Персонализация стоимости</h3>
             <p>Мы подбираем определенную фабрику, поставщиков, вид доставки,
@@ -102,59 +106,75 @@
 
     <section class="about">
       <div class="wrap">
-        <img src="./img/year.png" alt="Год" class="about__img">
+        <!-- 1x: 220x317px; 2x: 440x634px -->
+        <picture>
+          <source type="image/webp" srcset="img/year.webp 1x, img/year2x.webp 2x">
+          <img src="img/year.png" alt="Год" class="about__img" width="220" height="317" srcset="img/year2x.png 2x">
+        </picture>
         <div class="about__container">
           <h2 class="about__heading">О компании</h2>
-          <p class="about__text">
-            Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997
+          <p>
+            Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
+            1997
             года.
             Выполняем срочные заказы и пилотные образцы до 10 дней.
-
-            Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
-            Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
-            РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
-            светотехники России.
           </p>
-          <a href="#" class="about__button">подробнее</a>
+          <p>
+            Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
+            Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных
+            <span>Дорог..</span>
+            <span>Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники.
+              Среди наших клиентов крупнейшие Производители
+              светотехники России.</span>
+          </p>
+          <a href="#" class="about__button button">подробнее</a>
         </div>
       </div>
     </section>
 
-    <secction class="services">
+    <section class="services">
       <div class="wrap">
         <h2 class="services__heading">Service Device предлагает следующие товары и услуги</h2>
         <div class="services__list">
-          <a href="#" class="services__item">
-            Производство печатных плат
+          <a href="#" class="services__item services__item--production">
+            Производство<br> печатных плат
           </a>
-          <a href="#" class="services__item">
-            Монтаж печатных плат
+          <a href="#" class="services__item services__item--installation">
+            Монтаж печатных<br> плат
           </a>
-          <a href="#" class="services__item">
-            Комплектующие для светотехники
+          <a href="#" class="services__item services__item--accessories">
+            Комплектующие<br> для светотехники
           </a>
         </div>
       </div>
-    </secction>
+    </section>
 
-    <section class="feedback">
+    <section class="feedback" id="feedback">
       <div class="wrap">
-        <img src="./img/paper_airplane.png" alt="Бумажный самолетки" class="feedback__img">
-        <div class="form">
+        <!-- 1x: 511x288px; 2x: 1022x576px -->
+        <picture>
+          <source type="image/webp" srcset="img/paper_airplane.webp 1x, img/paper_airplane2x.webp 2x">
+          <img src="img/paper_airplane.png" alt="Бумажный самолетки" class="feedback__img" width="511" height="288"
+          srcset="img/paper_airplane2x.png 2x">
+        </picture>
+
+        <div class="feedback__form">
           <h2 class="feedback__heading">Остались вопросы? Задайте их нам!</h2>
           <p class="feedback__text">Мы проконсультируем Вас бесплатно</p>
-          <form action="#" method="GET" class="form__field">
+          <form action="#" method="GET" class="feedback__field">
             <label for="name">
               <input type="text" id="name" name="name" required placeholder="Имя">
             </label><label for="telephone">
               <input type="tel" id="telephone" name="telephone" required placeholder="Телефон">
             </label>
-            <textarea name="" id="" cols="30" rows="10">Ваш вопрос</textarea>
-            <button>задать вопрос</button>
-            <label for="agree">
+            <textarea id="question" cols="30" rows="10">Ваш вопрос</textarea>
+            <button class="button" type="submit">задать вопрос</button>
+            <div class="feedback__checkbox">
               <input type="checkbox" id="agree" name="agree" checked>
-              Я согласен на обработку персональных данных
-            </label>
+              <label for="agree">
+                Я согласен на обработку<br> персональных данных
+              </label>
+            </div>
           </form>
         </div>
       </div>
@@ -163,84 +183,137 @@
   </main>
 
   <footer class="footer">
-
     <div class="wrap">
-      <section class="socials">
-        <a href="#" class="footer__logo">
+      <div class="container">
+        <section class="socials">
+          <h2 class="visually-hidden">Социальные сети</h2>
+          <a href="#" class="footer__logo">
+            <img src="./img/logo.svg" alt="Логотип компании" width="52" height="52">
+            <div>
+              <strong>Service Device</strong>
+              умные технологии
+            </div>
+          </a>
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a href="#">
+                <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#fb_icon"></use>
+                </svg>
+                <span class="visually-hidden">Фэйсбук</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#">
+                <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#classmates_icon"></use>
+                </svg>
+                <span class="visually-hidden">Одноклассники</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#">
+                <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#vk_icon"></use>
+                </svg>
+                <span class="visually-hidden">ВКонтакте</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section class="navigation-footer">
+          <h2>Разделы сайта</h2>
+          <div class="accordion">
+            <button class="toggle"><span class="visually-hidden">Открыть</span></button>
+            <ul class="navigation-footer__list">
+              <li>
+                <a href="#">О компании</a>
+              </li>
+              <li>
+                <a href="#">Продукты</a>
+              </li>
+              <li>
+                <a href="#"> Производство печатных плат</a>
+              </li>
+              <li>
+                <a href="#">Монтаж печатных плат</a>
+              </li>
+              <li>
+                <a href="#">Комплектующие</a>
+              </li>
+              <li>
+                <a href="#">Доставка </a>
+              </li>
+              <li>
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="contacts">
+          <h2>Наш офис</h2>
+          <div class="accordion">
+            <button class="toggle"><span class="visually-hidden">Открыть</span></button>
+            <ul>
+              <li>
+                <a>г. Мытищи, Олимпийский проспект, д.10</a>
+              </li>
+              <li>
+                <a href="tel:+74955894050">+7 (495) 589-40-50</a>
+              </li>
+              <li>
+                <a href="tel:+79250038767">+7 (925) 003-87-67</a>
+              </li>
+              <li>
+                <a href="tel:+792692608079">+7 (926) 926-080-79</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
 
-        </a>
-        <ul class="socilas__list">
-          <li class="socials__item">
-            <a href="#">
-              <span>Фэйсбук</span>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a href="#">
-              <span>Одноклассники</span>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a href="#">
-              <span>ВКонтакте</span>
-            </a>
-          </li>
-        </ul>
-      </section>
-      <section class="footer__navigation">
-        <h2>Разделы сайта</h2>
+      <section class="copyright">
+        <h2 class="visually-hidden">Права и конфиденциальность</h2>
         <ul>
-          <li>
-            <a href="">О компании</a>
-          </li>
-          <li>
-            <a href="">Продукты</a>
-          </li>
-          <li>
-            <a href=""> Производство печатных плат</a>
-          </li>
-          <li>
-            <a href="">Монтаж печатных плат</a>
-          </li>
-          <li>
-            <a href="">Комплектующие</a>
-          </li>
-          <li>
-            <a href="">Доставка </a>
-          </li>
-          <li>
-            <a href="">Контакты</a>
-          </li>
-        </ul>
-      </section>
-      <section class="contacts">
-        <h2>Наш офис</h2>
-        <ul>
-          <li>г. Мытищи, Олимпийский проспект, д.10</li>
-          <li>
-            <a href="tel:+74955894050">+7 (495) 589-40-50</a>
-          </li>
-          <li>
-            <a href="tel:+79250038767">+7 (925) 003-87-67</a>
-          </li>
-          <li>
-            <a href="tel:+792692608079">+7 (926) 926-080-79</a>
-          </li>
+          <li>все права защищены</li>
+          <li>1999-2018 sd service devices</li>
+          <li>условия конфиденциальности</li>
+          <li>developed by wow studio </li>
         </ul>
       </section>
     </div>
-
-    <section class="copyright">
-      <ul>
-        <li>все права защищены</li>
-        <li>1999-2018 sd service devices</li>
-        <li>условия конфиденциальности</li>
-        <li>developed by wow studio </li>
-      </ul>
-    </section>
   </footer>
 
-  <!-- <script src="js/script.js"></script> -->
+  <section class="modal visually-hidden">
+    <div class="wrap">
+      <div class="modal__form">
+        <button class="modal__toggle"><span class="visually-hidden">Закрыть</span></button>
+        <h2 class="modal__heading">
+          Закажите звонок
+        </h2>
+        <p class="modal__text">
+          Оставьте контакты, мы проконсультируем<br> вас бесплатно в удобное время
+        </p>
+        <form action="#" method="GET" class="modal__field">
+          <label for="modal-name">
+            <input type="text" id="modal-name" name="modal-name" required placeholder="Имя">
+          </label><label for="modal-telephone">
+            <input type="tel" id="modal-telephone" name="modal-telephone" required placeholder="Телефон">
+          </label>
+          <textarea id="modal-question" cols="30" rows="10">Ваш вопрос</textarea>
+          <button class="button" type="submit">отправить</button>
+          <div class="modal__checkbox">
+            <input type="checkbox" id="modal-agree" name="modal-agree" checked>
+            <label for="modal-agree">
+              Я согласен на обработку персональных<br> данных
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>

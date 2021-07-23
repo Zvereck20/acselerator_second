@@ -3,3 +3,28 @@
 @import "global/fonts.scss";
 @import "global/variables.scss";
 @import "global/global.scss";
+
+// Header
+
+@import "header/header.scss";
+@import "header/navigation.scss";
+@import "header/slogan.scss";
+
+// Main
+
+@import "main/advantages.scss";
+@import "main/about.scss";
+@import "main/services.scss";
+@import "main/feedback.scss";
+
+// Footer
+
+@import "footer/footer.scss";
+@import "footer/navigation-footer.scss";
+@import "footer/socials.scss";
+@import "footer/contacts.scss";
+@import "footer/copyright.scss";
+
+// Modal
+
+@import "modal.scss";
