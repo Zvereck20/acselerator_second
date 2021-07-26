@@ -39,12 +39,12 @@
 
 .socials__item {
   list-style: none;
+  transition-duration: 0.3s;
 
   &:hover {
     svg {
       fill: $excretion-color;
       transform: scale(1.1, 1.1);
-      transition-duration: 0.3s;
     }
   }
 

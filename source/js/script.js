@@ -76,7 +76,7 @@ modal.addEventListener('submit', (evt) => {
   }
 });
 
-const feedbackForm = document.querySelector('.fedback__field');
+const feedbackForm = document.querySelector('.feedback__field');
 const FEEDBACK_NAME = feedbackForm.querySelector('#name')
 const FEEDBACK_PHONE = feedbackForm.querySelector('#telephone')
 const FEEDBACK_QUESTION = feedbackForm.querySelector('#question')
