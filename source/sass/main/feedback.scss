@@ -269,6 +269,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
+    cursor: pointer;
   }
 
   input:checked + label::before {
