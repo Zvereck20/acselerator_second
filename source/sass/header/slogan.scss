@@ -2,7 +2,6 @@
   width: 51%;
   padding-top: 175px;
   padding-bottom: 275px;
-  position: relative;
 
   @media (max-width: $tablet-width) {
     width: 55%;
@@ -27,7 +26,6 @@
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: $main-color;
-  position: relative;
 
   @media (max-width: $tablet-width) {
     font-size: 60px;
@@ -85,7 +83,7 @@
   font-size: 16px;
   line-height: 19px;
   position: relative;
-  z-index: 10;
+  z-index: 2;
 
   span:last-of-type {
     display: none;

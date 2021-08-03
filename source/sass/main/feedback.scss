@@ -191,7 +191,7 @@
   }
 
   @media (max-width: $tablet-width) {
-    padding-top: 10px;
+    padding-top: 39px;
 
     input {
       width: 257px;
@@ -214,6 +214,8 @@
   }
 
   @media (max-width: $mobile-width) {
+    padding-top: 10px;
+
     input {
       width: 271px;
       margin-bottom: 30px;

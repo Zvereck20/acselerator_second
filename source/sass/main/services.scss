@@ -1,5 +1,5 @@
 .services {
-  padding-top: 87px;
+  padding-top: 57px;
   padding-bottom: 125px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   background-color: $block-background;
@@ -33,12 +33,14 @@
   color: $main-color;
 
   @media (max-width: $tablet-width) {
+    width: 85%;
     margin-left: 0;
     font-size: 32px;
     line-height: 140.62%;
   }
 
   @media (max-width: $mobile-width) {
+    width: 100%;
     padding-left: 10px;
     font-size: 28px;
   }
@@ -75,6 +77,16 @@
   color: $main-color;
   position: relative;
   background-repeat: no-repeat;
+
+  &:hover {
+    color: $excretion-color;
+    outline: 1px solid $excretion-color;
+  }
+
+  &:focus {
+    color: $excretion-color;
+    outline: 1px solid $excretion-color;
+  }
 
   &::before {
     content: "";

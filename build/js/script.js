@@ -8,6 +8,7 @@ const openModalButton = document.querySelector('.navigation__button');
 const MODAL_QUESTION = document.querySelector('#modal-question');
 const MODAL_NAME = modal.querySelector('#modal-name');
 const MODAL_PHONE = modal.querySelector('#modal-telephone');
+const MODAL_CHECKBOX = modal.querySelector('#modal-agree');
 
 function existVerticalScroll() {
   return document.body.offsetHeight > window.innerHeight
@@ -56,7 +57,18 @@ document.addEventListener('keydown', (evt) => {
   };
 });
 
+const checkedCheckbox = (ckeckbox) => {
+   if (!ckeckbox.checked) {
+    ckeckbox.setCustomValidity('К сожалению вы не дали своего согласия!');
+  } else {
+    ckeckbox.setCustomValidity('');
+  }
+}
+
 // Local save
+MODAL_CHECKBOX.addEventListener('click', () => {
+  checkedCheckbox(MODAL_CHECKBOX);
+});
 
 modal.addEventListener('submit', (evt) => {
   evt.preventDefault();
@@ -80,6 +92,11 @@ const feedbackForm = document.querySelector('.feedback__field');
 const FEEDBACK_NAME = feedbackForm.querySelector('#name');
 const FEEDBACK_PHONE = feedbackForm.querySelector('#telephone');
 const FEEDBACK_QUESTION = feedbackForm.querySelector('#question');
+const FEEDBACK_CHECKBOX = feedbackForm.querySelector('#agree');
+
+FEEDBACK_CHECKBOX.addEventListener('click', () => {
+  checkedCheckbox(FEEDBACK_CHECKBOX);
+});
 
 feedbackForm.addEventListener('submit', (evt) => {
   evt.preventDefault();

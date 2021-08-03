@@ -52,6 +52,15 @@
     }
   }
 
+  a {
+    text-decoration: none;
+    color: $block-background;
+
+    &:hover {
+      color: $excretion-color;
+    }
+  }
+
   @media (max-width: $mobile-width) {
     ul {
       flex-direction: column;
