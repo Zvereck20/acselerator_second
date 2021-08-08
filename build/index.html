@@ -184,7 +184,7 @@
         <section class="socials">
           <h2 class="visually-hidden">Социальные сети</h2>
           <a href="#" class="footer__logo">
-            <img src="./img/footer_logo.svg" alt="Логотип компании" width="216px" height="52">
+            <img src="./img/footer_logo.svg" alt="Логотип компании" width="216" height="52">
           </a>
           <ul class="socials__list">
             <li class="socials__item">
@@ -218,29 +218,35 @@
           <button class="toggle">
             <span>Разделы сайта</span>
           </button>
-          <ul class="navigation-footer__list">
-            <li>
-              <a href="#">О компании</a>
-            </li>
-            <li>
-              <a href="#">Продукты</a>
-            </li>
-            <li>
-              <a href="#"> Производство печатных плат</a>
-            </li>
-            <li>
-              <a href="#">Монтаж печатных плат</a>
-            </li>
-            <li>
-              <a href="#">Комплектующие</a>
-            </li>
-            <li>
-              <a href="#">Доставка </a>
-            </li>
-            <li>
-              <a href="#">Контакты</a>
-            </li>
-          </ul>
+          <div class="navigation-footer__wrap">
+            <ul class="navigation-footer__list">
+              <li>
+                <a href="#">О компании</a>
+              </li>
+              <li>
+                <a href="#">Продукты</a>
+              </li>
+              <li>
+                <a href="#"> Производство печатных плат</a>
+              </li>
+              <li>
+                <a href="#">Монтаж печатных плат</a>
+              </li>
+            </ul>
+            <ul class="navigation-footer__list">
+              <li>
+                <a href="#">Комплектующие</a>
+              </li>
+              <li>
+                <a href="#">Доставка </a>
+              </li>
+              <li>
+                <a href="#">Контакты</a>
+              </li>
+              <li>
+              </li>
+            </ul>
+          </div>
         </section>
         <section class="contacts accordion">
           <h2>Наш офис</h2>
@@ -305,6 +311,7 @@
     </div>
   </section>
 
+  <script src="http://unpkg.com/dom-focus-lock"></script>
   <script src="js/script.js"></script>
 </body>
 

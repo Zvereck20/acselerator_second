@@ -63,7 +63,8 @@ footer {
   cursor: pointer;
   transition-duration: 0.3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-radius: 10px;
     transform: scale(1.1, 1.1);
   }

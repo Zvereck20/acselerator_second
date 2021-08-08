@@ -22,33 +22,32 @@
 
 .advantages__list {
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 30px;
   justify-content: center;
 
   @media (max-width: $mobile-width) {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
     gap: 20px;
   }
 }
 
 .advantages__item {
-  max-width: 570px;
-  height: 299px;
+  min-height: 299px;
   padding-top: 35px;
   padding-left: 40px;
   padding-right: 45px;
   list-style: none;
   display: flex;
-  flex-basis: 50%;
   flex-wrap: wrap;
   align-items: flex-start;
   flex-direction: column;
   border: 1px solid $advantages-border;
   border-left: 3px solid $excretion-color;
   box-sizing: border-box;
-  cursor: pointer;
 
   &:hover {
     background-color: $excretion-color;
@@ -76,18 +75,17 @@
   }
 
   @media (max-width: $tablet-width) {
-    max-width: 345px;
-    height: 306px;
+    min-height: 306px;
     padding-top: 23px;
     padding-left: 25px;
     padding-right: 19px;
 
     &:last-of-type {
-      height: 232px;
+      min-height: 232px;
     }
 
     &:nth-last-of-type(2) {
-      height: 232px;
+      min-height: 232px;
 
       p {
         margin-top: 15px;
@@ -104,9 +102,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    max-width: 290px;
-    height: 310px;
-    flex-basis: auto;
+    min-height: 310px;
     padding-right: 10px;
 
     &:first-of-type {
@@ -118,7 +114,7 @@
     }
 
     &:last-of-type {
-      height: 244px;
+      min-height: 244px;
       padding-right: 15px;
 
       p {

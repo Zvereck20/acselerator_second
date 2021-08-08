@@ -21,6 +21,7 @@
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/fees2x.png");
+      background-size: cover;
     }
   }
 
@@ -35,7 +36,12 @@
     right: 250px;
 
     @media (min-resolution: 2dppx) {
+      width: 644px;
+      height: 641px;
+      bottom: 119px;
+      right: 246px;
       background-image: url("../img/triangle2x.png");
+      background-size: cover;
     }
   }
 
@@ -91,11 +97,11 @@
   flex-wrap: wrap;
   align-items: flex-start;
   text-decoration: none;
-  cursor: pointer;
 
   @media (max-width: $mobile-width) {
     width: 45px;
     overflow: hidden;
+    padding-top: 8px;
 
     img {
       height: 38px;

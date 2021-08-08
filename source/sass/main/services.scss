@@ -1,6 +1,6 @@
 .services {
   padding-top: 57px;
-  padding-bottom: 125px;
+  padding-bottom: 98px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   background-color: $block-background;
 
@@ -12,12 +12,11 @@
 
   @media (max-width: $tablet-width) {
     padding-top: 23px;
-    padding-bottom: 78px;
+    padding-bottom: 33px;
   }
 
   @media (max-width: $mobile-width) {
     padding-top: 27px;
-    padding-bottom: 64px;
 
     .wrap {
       padding: 0 15px;
@@ -52,22 +51,21 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  gap: 30px;
 
   @media (max-width: $tablet-width) {
     margin-left: -2px;
-    gap: 45px;
   }
 
   @media (max-width: $mobile-width) {
     padding-top: 19px;
-    gap: 30px;
   }
 }
 
 .services__item {
   width: 325px;
   height: 570px;
+  margin-right: 30px;
+  margin-bottom: 30px;
   padding-top: 48px;
   padding-left: 44px;
   display: block;
@@ -77,6 +75,7 @@
   color: $main-color;
   position: relative;
   background-repeat: no-repeat;
+  background-size: cover;
 
   &:hover {
     color: $excretion-color;
@@ -109,6 +108,10 @@
     right: 24px;
   }
 
+  &:last-of-type {
+    margin-right: 0;
+  }
+
   &--production {
     background-image: url("../img/production-desktop.png");
 
@@ -136,6 +139,8 @@
   @media (max-width: $tablet-width) {
     width: 672px;
     height: 215px;
+    margin-right: 0;
+    margin-bottom: 45px;
     padding-top: 42px;
     padding-left: 42px;
     background-size: cover;
@@ -144,7 +149,7 @@
       background-image: url("../img/production-tablet.png");
 
       @media (min-resolution: 2dppx) {
-        background-image: url("../img/accessories-tablet2x.png");
+        background-image: url("../img/production-tablet2x.png");
       }
     }
 
@@ -152,7 +157,7 @@
       background-image: url("../img/installation-tablet.png");
 
       @media (min-resolution: 2dppx) {
-        background-image: url("../img/accessories-tablet2x.png");
+        background-image: url("../img/installation-tablet2x.png");
       }
     }
 
@@ -168,8 +173,9 @@
   }
 
   @media (max-width: $mobile-width) {
-    width: 255px;
+    width: 87%;
     height: 236px;
+    margin-bottom: 30px;
     padding-top: 20px;
     padding-left: 33px;
 

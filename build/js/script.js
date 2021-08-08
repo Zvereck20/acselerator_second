@@ -9,6 +9,7 @@ const MODAL_QUESTION = document.querySelector('#modal-question');
 const MODAL_NAME = modal.querySelector('#modal-name');
 const MODAL_PHONE = modal.querySelector('#modal-telephone');
 const MODAL_CHECKBOX = modal.querySelector('#modal-agree');
+const MODAL_BUTTON = modal.querySelector('.button');
 
 function existVerticalScroll() {
   return document.body.offsetHeight > window.innerHeight
@@ -17,6 +18,24 @@ function existVerticalScroll() {
 function getBodyScrollTop() {
   return self.pageYOffset || (document.documentElement && document.documentElement.ScrollTop) || (document.body && document.body.scrollTop);
 };
+
+const setTabindex = () => {
+  MODAL_NAME.setAttribute('tabindex', 1);
+  MODAL_PHONE.setAttribute('tabindex', 2);
+  MODAL_QUESTION.setAttribute('tabindex', 3);
+  MODAL_BUTTON.setAttribute('tabindex', 4);
+  MODAL_CHECKBOX.setAttribute('tabindex', 5);
+  closeModalButton.setAttribute('tabindex', 6);
+}
+
+const removeTabindex = () => {
+  MODAL_NAME.removeAttribute('tabindex');
+  MODAL_PHONE.removeAttribute('tabindex');
+  MODAL_QUESTION.removeAttribute('tabindex');
+  MODAL_BUTTON.removeAttribute('tabindex');
+  MODAL_CHECKBOX.removeAttribute('tabindex');
+  closeModalButton.removeAttribute('tabindex');
+}
 
 openModalButton.addEventListener('click', e => {
   e.preventDefault();
@@ -31,6 +50,9 @@ openModalButton.addEventListener('click', e => {
     body.classList.add('body-lock')
     body.style.top = `-${body.dataset.scrollY}px`
   };
+
+  setTabindex();
+  focusLock.on(modal);
 })
 
 closeModalButton.addEventListener('click', e => {
@@ -42,6 +64,9 @@ closeModalButton.addEventListener('click', e => {
     body.classList.remove('body-lock')
     window.scrollTo(0, body.dataset.scrollY)
   };
+
+  removeTabindex();
+  focusLock.off(modal);
 })
 
 document.addEventListener('keydown', (evt) => {
@@ -54,11 +79,28 @@ document.addEventListener('keydown', (evt) => {
       body.classList.remove('body-lock')
       window.scrollTo(0, body.dataset.scrollY)
     }
+
+    removeTabindex();
+    focusLock.off(modal);
   };
 });
 
+modal.addEventListener('click', (evt) => {
+  if (evt.target === modal) {
+    modal.classList.add('visually-hidden');
+  }
+
+  if (existVerticalScroll()) {
+    body.classList.remove('body-lock')
+    window.scrollTo(0, body.dataset.scrollY)
+  };
+
+  removeTabindex();
+  focusLock.off(modal);
+});
+
 const checkedCheckbox = (ckeckbox) => {
-   if (!ckeckbox.checked) {
+  if (!ckeckbox.checked) {
     ckeckbox.setCustomValidity('К сожалению вы не дали своего согласия!');
   } else {
     ckeckbox.setCustomValidity('');
@@ -66,6 +108,7 @@ const checkedCheckbox = (ckeckbox) => {
 }
 
 // Local save
+
 MODAL_CHECKBOX.addEventListener('click', () => {
   checkedCheckbox(MODAL_CHECKBOX);
 });

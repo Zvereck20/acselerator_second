@@ -23,14 +23,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: space-between;
   }
 
   @media (max-width: $tablet-width) {
     padding-top: 7px;
 
     .container {
-      padding-bottom: 27px;
+      padding-bottom: 42px;
     }
 
     &::before {
@@ -73,4 +72,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 5px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 0;
+  }
 }

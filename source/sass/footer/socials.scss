@@ -1,5 +1,6 @@
 .socials {
   padding-top: 11px;
+  padding-right: 15px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -7,37 +8,44 @@
   @media (max-width: $tablet-width) {
     padding-top: 5px;
     padding-bottom: 45px;
+    padding-right: 0;
     flex-basis: 100%;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
   }
 
   @media (max-width: $mobile-width) {
+    align-items: center;
     padding-bottom: 32px;
     flex-direction: column;
   }
 }
 
 .socials__list {
-  padding-top: 37px;
+  width: 60%;
+  margin-left: -3px;
+  padding-top: 36px;
   padding-left: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
 
   @media (max-width: $tablet-width) {
+    width: 22%;
+    margin-left: 0;
     padding-top: 0;
+    justify-content: flex-end;
   }
 
   @media (max-width: $mobile-width) {
+    width: 70%;
     padding-top: 65px;
+    justify-content: center;
   }
 }
 
 .socials__item {
+  padding-right: 16px;
   list-style: none;
   transition-duration: 0.3s;
 
@@ -50,5 +58,14 @@
 
   svg {
     fill: $socials-color;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-right: 0;
+    padding-left: 15px;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
   }
 }
